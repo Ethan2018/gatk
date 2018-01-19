@@ -116,7 +116,7 @@ class SamplePloidyExporter:
 
     def __call__(self):
         for si, sample_name in enumerate(self.ploidy_workspace.sample_names):
-            sample_name_comment_line = [io_consts.sample_name_header_prefix + sample_name]
+            sample_name_comment_line = [io_consts.sample_name_sam_header_prefix + sample_name]
             sample_posterior_path = os.path.join(self.output_path, io_consts.sample_folder_prefix + repr(si))
             io_commons.assert_output_path_writable(sample_posterior_path, try_creating_output_path=True)
             _logger.info("Saving posteriors for sample \"{0}\" in \"{1}\"...".format(
